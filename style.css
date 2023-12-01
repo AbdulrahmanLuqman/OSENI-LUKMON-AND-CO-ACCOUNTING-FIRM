@@ -1,0 +1,211 @@
+<<<<<<< HEAD
+=======
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+:root{
+    --main-primary-color: #006F93;
+    --main-secondary-color: #00B6D6;
+    --secondary-bg-color: #F2F2F2;
+    --padding-x: 120px;
+    --padding-x-lg: 60px; /* max-width: 1024px */
+    --padding-x-md: 40px; /* max-width: 768px */
+    --padding-x-sm: 5px; /* max-width: 475px */
+    --text-main-color: #757575;
+}
+a{
+    text-decoration: none;
+}
+svg{
+    cursor: pointer;
+}
+#app{
+    max-width: 1440px;
+    margin: auto;
+}
+
+/* ----------HEADER---------- */
+
+/* --------CONTACT AND LOCATION--------- */
+.header-contacts{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px var(--padding-x);
+    background-color: var(--secondary-bg-color);
+}
+@media (max-width:1024px) {
+    .header-contacts{
+        padding: 10px var(--padding-x-lg);
+    }
+}
+@media (max-width:768px) {
+    .header-contacts{
+        padding: 10px var(--padding-x-md);
+    }
+}
+@media (max-width:728px) {
+    .header-contacts{
+        display: none;
+    }
+}
+
+.location-and-gmail{
+    display: flex;
+    column-gap: 15px;
+}
+.header-location, .header-gmail{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    height: fit-content;
+}
+.header-location > span, .header-gmail > a{
+    color: var(--text-main-color);
+}
+.header-social-media-icons{
+    display: flex;
+    gap: 8px;
+}
+
+/* ----------DESKTOP NAVBAR---------- */
+.nav-and-contact{
+    background-color: var(--main-primary-color);
+    padding: 10px var(--padding-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width:1024px) {
+    .nav-and-contact{
+        padding: 10px var(--padding-x-lg);
+    }
+}
+@media (max-width:768px) {
+    .nav-and-contact{
+        padding: 10px var(--padding-x-md);
+    }
+}
+@media (max-width:475px) {
+    .nav-and-contact{
+        padding: 10px var(--padding-x-sm);
+    }
+}
+nav{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+.logo > img{
+    width: 50px;
+}
+.logo > span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+.nav-item{
+    display: flex;
+    column-gap: 15px;
+}
+.nav-item > li{
+    list-style-type: none;
+}
+.nav-item > .nav-links > a{
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+.nav-item > .nav-links > a:hover{
+    color: var(--main-secondary-color);
+}
+.nav-item > .nav-links > a:focus{
+    color: var(--main-secondary-color);
+}
+.header-contact{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.header-phone-number{
+    display: flex;
+    flex-direction: column;
+}
+.header-phone-number > span{
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.header-phone-number > a{
+    color: var(--secondary-bg-color);
+}
+.icon{
+    background-color: var(--main-secondary-color);
+    width: fit-content;
+    border-radius: 50%;
+    padding: 5px 5px 2px 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+.icon:hover{
+    background-color: var(--main-primary-color);
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+.open-and-close-icon{
+    display: none;
+}
+/* MOBILE NAVBAR */
+@media (max-width:900px) {
+    .nav-and-contact{
+        position: relative;
+    }
+    .nav-item{
+        position: absolute;
+        flex-direction: column;
+        gap: 15px;
+        /* top: 90px; */
+        top: -200px;
+        background-color: #016687;
+        left: 0;
+        padding: 20px 0;
+        width: 100%;
+        transition: all 0.8s linear;
+        z-index: -200;
+    }
+    .show-nav-item{
+        top: 90px;
+    }
+    .nav-links{
+        padding: 0 40px; 
+    }
+    .open-and-close-icon{
+        display: block;
+        /* border: 1px solid var(--main-secondary-color); */
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 2px 2px 0;
+    }
+    .hide-open{
+        display: none;
+    }
+    .close{
+        display: none;
+    }
+    .show-close{
+        display: block;
+    }
+    .header-contact{
+        display: none;
+    }
+
+}
+>>>>>>> f4ee18c86b5e05d5596459d809a0f230a78b3dd5

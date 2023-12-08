@@ -12,7 +12,7 @@ body{
     --padding-x: 120px;
     --padding-x-lg: 60px; /* max-width: 1024px */
     --padding-x-md: 40px; /* max-width: 768px */
-    --padding-x-sm: 5px; /* max-width: 475px */
+    --padding-x-sm: 20px; /* max-width: 475px */
     --text-main-color: #757575;
 }
 a{
@@ -24,6 +24,18 @@ svg{
 #app{
     max-width: 1440px;
     margin: auto;
+}
+.cover{
+    display: none;
+}
+.show-cover{
+    display: block;
+    background-color: black;
+    opacity: 0.5;
+    height: 100vh;
+    position: sticky;
+    bottom: 0;
+    z-index: 300;
 }
 
 /* ----------HEADER---------- */
@@ -76,6 +88,8 @@ svg{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 500;
 }
 @media (max-width:1024px) {
     .nav-and-contact{
@@ -170,17 +184,16 @@ nav{
         position: absolute;
         flex-direction: column;
         gap: 15px;
-        /* top: 90px; */
-        top: -200px;
+        top: 90px;
         background-color: #016687;
-        left: 0;
+        left: -1000px;
         padding: 20px 0;
         width: 100%;
         transition: all 0.8s linear;
         z-index: -200;
     }
     .show-nav-item{
-        top: 90px;
+        left: 0px;
     }
     .nav-links{
         padding: 0 40px; 
@@ -204,5 +217,164 @@ nav{
     .header-contact{
         display: none;
     }
+}
 
+/* HEROSECTION */
+
+#hero-section{
+    background-image: url(./images/time-and-money.jpeg);
+    height: 80vh;
+    background-position: bottom;
+    background-size: cover;
+    padding: 10px var(--padding-x);
+    position: relative;
+}
+@media (max-width:1024px) {
+    #hero-section{
+        padding: 70px var(--padding-x-lg);
+    }
+}
+@media (max-width:768px) {
+    #hero-section{
+        padding: 100px var(--padding-x-md);
+        height: fit-content;
+    }
+}
+@media (max-width:475px) {
+    #hero-section{
+        padding: 50px var(--padding-x-sm);
+    }
+}
+#hero-section .hero-section-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 15px;
+    width: 70%;
+    z-index: 300;
+    position: relative;
+}
+@media (max-width:797px) {
+    #hero-section .hero-section-content{
+        width: 80%;
+    }
+}
+#hero-section > .hero-section-content > h3{
+    color: var(--main-secondary-color);
+}
+#hero-section .sub-title{
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+@media (max-width:797px) {
+    #hero-section .sub-title{
+        font-size: 2rem ;
+    }
+}
+@media (max-width:475px) {
+    #hero-section .sub-title{
+        font-size: 1.2rem;
+    }
+}
+#hero-section .content{
+    color:whitesmoke;
+    font-size: 13px;
+}
+#hero-section .hero-section-content > button{
+    width: fit-content;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: var(--main-secondary-color);
+    border: none;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+@media (max-width:475px) {
+    #hero-section .hero-section-content > button{
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+#hero-section .hero-section-content > button:hover{
+    background-color: var(--main-primary-color);
+    transform: translateY(-10px);
+    transition: all 0.4s linear;
+}
+#hero-section .benefit{
+    position: absolute;
+    bottom: -60px;
+    z-index: 200;
+    display: flex;
+    gap: 20px;
+    right: 100px;
+    width: fit-content;
+}
+@media (max-width:975px) {
+    #hero-section .benefit{
+        margin: auto;
+        right: 0;
+        left: 0;
+    }
+}
+@media (max-width:768px) {
+    #hero-section .benefit{
+        flex-direction: column;
+        bottom: -300px;
+        gap: 10px;
+    }
+}
+#hero-section .time-saving{
+    background-color: var(--main-primary-color);
+    width: 300px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+#hero-section .cost-effective{
+    background-color: var(--main-secondary-color);
+    width: 300px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+@media (max-width:366px) {
+    #hero-section .time-saving, #hero-section .cost-effective{
+       width: 70%;
+       margin: auto;
+    }
+    #hero-section .benefit{
+        bottom: -355px;
+    }
+}
+#hero-section .benefit-and-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#hero-section .time-saving h5, #hero-section .cost-effective h5{
+    color: white;
+    font-size: 1.2rem;
+
+}
+#hero-section .time-saving p, #hero-section .cost-effective p{
+    color: white;
+    font-size: 13px;
+}
+#hero-section .overlay{
+    background-color: rgb(39, 38, 38);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.7;
+    top: 0;
 }
